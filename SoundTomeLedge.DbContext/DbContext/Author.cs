@@ -3,11 +3,11 @@ namespace SoundTomeLedge.DbContext;
 public class Author
 {
     public Guid Id { get; set; }
-    public required string Name { get; set; }
-    public required string LastFirst { get; set; }
-    public required string ASIN { get; set; }
-    public required string Description { get; set; }
-    public required string ImagePath { get; set; }
+    public string Name { get; set; }
+    public string LastFirst { get; set; }
+    public string ASIN { get; set; }
+    public string Description { get; set; }
+    public string ImagePath { get; set; }
     public DateTimeOffset UpdatedAt { get; set; }
     public DateTimeOffset CreatedAt { get; set; }
 

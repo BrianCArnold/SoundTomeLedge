@@ -22,6 +22,7 @@ public interface IBookShelfContext
     DbSet<BookChapter> BookChapters { get; set; }
     DbSet<EBookFile> EBookFiles { get; set; }
     DbSet<AudioFile> AudioFiles { get; set; }
+    DbSet<Backup> Backups { get; set; }
     int SaveChanges();
     int SaveChanges(bool acceptAllChangesOnSuccess);
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
@@ -79,6 +80,7 @@ internal class BookShelfContext : DbContext, IBookShelfContext
     public DbSet<BookChapter> BookChapters { get; set; }
     public DbSet<EBookFile> EBookFiles { get; set; }
     public DbSet<AudioFile> AudioFiles { get; set; }
+    public DbSet<Backup> Backups { get; set; }
 
     public string DbPath { get; }
 

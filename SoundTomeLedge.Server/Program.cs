@@ -1,6 +1,3 @@
-using System.Text.Json.Serialization;
-using SoundTomeLedge.DbContext;
-
 namespace SoundTomeLedge;
 
 internal class Program
@@ -10,7 +7,6 @@ internal class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
-
         builder
             .Services.AddControllersWithViews()
             .AddJsonOptions(options =>
