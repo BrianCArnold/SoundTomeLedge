@@ -1,3 +1,5 @@
+namespace SoundTomeLedge.DbContext;
+
 public class Backup
 {
     public Guid Id { get; set; }

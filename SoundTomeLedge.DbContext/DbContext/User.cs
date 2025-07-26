@@ -13,4 +13,5 @@ public class User
     public bool IsModerator { get; set; }
     public bool IsListener { get; set; }
     public List<UserBookmark> Bookmarks { get; } = new();
+    public List<EreaderDeviceUser> EreaderDevices { get; set; } = new();
 }

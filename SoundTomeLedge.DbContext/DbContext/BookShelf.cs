@@ -23,6 +23,10 @@ public interface IBookShelfContext
     DbSet<EBookFile> EBookFiles { get; set; }
     DbSet<AudioFile> AudioFiles { get; set; }
     DbSet<Backup> Backups { get; set; }
+    DbSet<EmailSettings> EmailSettings { get; set; }
+    DbSet<EreaderDeviceUser> EreaderDeviceUsers { get; set; }
+    DbSet<EreaderDevice> EreaderDevices { get; set; }
+    DbSet<ClientCustomMetadataProvider> ClientCustomMetadataProviders { get; set; }
     int SaveChanges();
     int SaveChanges(bool acceptAllChangesOnSuccess);
     Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
@@ -63,26 +67,30 @@ internal class BookShelfContext : DbContext, IBookShelfContext
     private readonly Action<DbContextOptionsBuilder> onConfiguring;
 
     public DbSet<Author> Authors { get; set; }
-    public DbSet<Book> Books { get; set; }
-    public DbSet<Collection> Collections { get; set; }
-    public DbSet<CollectionBook> CollectionsBook { get; set; }
-    public DbSet<BookAuthor> BookAuthor { get; set; }
-    public DbSet<UserBookProgess> UserBookProgess { get; set; }
-    public DbSet<User> Users { get; set; }
-    public DbSet<UserBookmark> UserBookmarks { get; set; }
-    public DbSet<Library> Libraries { get; set; }
-    public DbSet<Narrator> Narrators { get; set; }
-    public DbSet<BookNarrator> BookNarrators { get; set; }
-    public DbSet<Tag> Tags { get; set; }
-    public DbSet<Genre> Genres { get; set; }
-    public DbSet<BookGenre> BookGenres { get; set; }
-    public DbSet<BookTag> BookTags { get; set; }
-    public DbSet<BookChapter> BookChapters { get; set; }
-    public DbSet<EBookFile> EBookFiles { get; set; }
     public DbSet<AudioFile> AudioFiles { get; set; }
     public DbSet<Backup> Backups { get; set; }
+    public DbSet<Book> Books { get; set; }
+    public DbSet<BookGenre> BookGenres { get; set; }
+    public DbSet<BookAuthor> BookAuthor { get; set; }
+    public DbSet<BookChapter> BookChapters { get; set; }
+    public DbSet<BookNarrator> BookNarrators { get; set; }
+    public DbSet<BookTag> BookTags { get; set; }
+    public DbSet<ClientCustomMetadataProvider> ClientCustomMetadataProviders { get; set; }
+    public DbSet<Collection> Collections { get; set; }
+    public DbSet<CollectionBook> CollectionsBook { get; set; }
+    public DbSet<EBookFile> EBookFiles { get; set; }
+    public DbSet<Genre> Genres { get; set; }
+    public DbSet<Library> Libraries { get; set; }
+    public DbSet<Narrator> Narrators { get; set; }
+    public DbSet<Tag> Tags { get; set; }
+    public DbSet<User> Users { get; set; }
+    public DbSet<UserBookmark> UserBookmarks { get; set; }
+    public DbSet<UserBookProgess> UserBookProgess { get; set; }
+    public DbSet<EmailSettings> EmailSettings { get; set; }
+    public DbSet<EreaderDeviceUser> EreaderDeviceUsers { get; set; }
+    public DbSet<EreaderDevice> EreaderDevices { get; set; }
 
-    public string DbPath { get; }
+    private string DbPath { get; }
 
     public BookShelfContext()
     {
